@@ -240,22 +240,24 @@ local emplois1 = ContextUI:CreateSubMenu(portefeuille, "Emplois principale")
 local emplois2 = ContextUI:CreateSubMenu(portefeuille, "Emplois secondaire")
 
 ContextUI:IsVisible(BaseMenu, function(Entity)
-    ContextUI:Button("~g~Inventaire", nil, function(Selected)
-        if (Selected) then
-        end
-    end, inventaire)
-    ContextUI:Button("~b~Portefeuille", nil, function(Selected)
-        if (Selected) then
-        end
-    end, portefeuille)
-    ContextUI:Button("~r~Mon personnage", nil, function(Selected)
-        if (Selected) then
-        end
-    end,Personnage)
-    ContextUI:Button("~b~Divers", nil, function(Selected)
-        if (Selected) then
-        end
-    end,divers)
+    if Entity.Model == `mp_m_freemode_01` then 
+        ContextUI:Button("~g~Inventaire", nil, function(Selected)
+            if (Selected) then
+            end
+        end, inventaire)
+        ContextUI:Button("~b~Portefeuille", nil, function(Selected)
+            if (Selected) then
+            end
+        end, portefeuille)
+        ContextUI:Button("~r~Mon personnage", nil, function(Selected)
+            if (Selected) then
+            end
+        end,Personnage)
+        ContextUI:Button("~b~Divers", nil, function(Selected)
+            if (Selected) then
+            end
+        end,divers)
+    end
 end)
 
 ContextUI:IsVisible(Personnage, function(Entity)
