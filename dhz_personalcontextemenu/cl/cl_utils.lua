@@ -7,6 +7,7 @@ Citizen.CreateThread(function()
 		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 		Citizen.Wait(1000)
 	end
+	ESX.PlayerData = ESX.GetPlayerData()
 end)
 
 function CheckQuantity(number)
